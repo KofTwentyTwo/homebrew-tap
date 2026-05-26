@@ -6,28 +6,22 @@ class Limen < Formula
 
   depends_on "tmux"
 
-  on_macos do
-    on_arm do
-      url "https://github.com/KofTwentyTwo/limen/releases/download/v#{version}/limen-macos-arm64"
-      sha256 "efd5b6ffeeaf978fdd21de5f1389f184733a34ce75f0f29ab9e48e6c1ffb557c"
-    end
+  host_cpu = RbConfig::CONFIG.fetch("host_cpu", "")
+  macos_arm = OS.mac? && (Hardware::CPU.arm? || host_cpu == "arm64" || RUBY_PLATFORM.start_with?("arm64-darwin"))
+  linux_arm = OS.linux? && (Hardware::CPU.arm? || host_cpu == "aarch64" || host_cpu == "arm64")
 
-    on_intel do
-      url "https://github.com/KofTwentyTwo/limen/releases/download/v#{version}/limen-macos-amd64"
-      sha256 "e056b8baf897be2b532721b7cce611d177525f1749e8cb17f81611d3f17e361c"
-    end
-  end
-
-  on_linux do
-    on_arm do
-      url "https://github.com/KofTwentyTwo/limen/releases/download/v#{version}/limen-linux-arm64"
-      sha256 "65f8381903f6a17509737d4272fd4f22b0e21cd82390cefc4f6870cb4285fb7c"
-    end
-
-    on_intel do
-      url "https://github.com/KofTwentyTwo/limen/releases/download/v#{version}/limen-linux-amd64"
-      sha256 "c9f38de6c503a2b81f5ffaf5e4e10f2c1818cf79500d77b6974871005e8336e1"
-    end
+  if macos_arm
+    url "https://github.com/KofTwentyTwo/limen/releases/download/v#{version}/limen-macos-arm64"
+    sha256 "efd5b6ffeeaf978fdd21de5f1389f184733a34ce75f0f29ab9e48e6c1ffb557c"
+  elsif OS.mac?
+    url "https://github.com/KofTwentyTwo/limen/releases/download/v#{version}/limen-macos-amd64"
+    sha256 "e056b8baf897be2b532721b7cce611d177525f1749e8cb17f81611d3f17e361c"
+  elsif linux_arm
+    url "https://github.com/KofTwentyTwo/limen/releases/download/v#{version}/limen-linux-arm64"
+    sha256 "65f8381903f6a17509737d4272fd4f22b0e21cd82390cefc4f6870cb4285fb7c"
+  else
+    url "https://github.com/KofTwentyTwo/limen/releases/download/v#{version}/limen-linux-amd64"
+    sha256 "c9f38de6c503a2b81f5ffaf5e4e10f2c1818cf79500d77b6974871005e8336e1"
   end
 
   def install
