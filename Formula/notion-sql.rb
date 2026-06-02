@@ -1,25 +1,25 @@
 class NotionSql < Formula
   desc "Run SQL-style CRUD statements against Notion databases"
   homepage "https://github.com/KofTwentyTwo/notion-sql"
-  version "0.1.0"
+  version "1.0.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/KofTwentyTwo/notion-sql/releases/download/v0.1.0/notion-sql-aarch64-apple-darwin.tar.xz"
-      sha256 "cc0ceb649c1b8a35ce605ee23d195778b8b0a5e466a396f56f31c54866a28119"
+      url "https://github.com/KofTwentyTwo/notion-sql/releases/download/v1.0.0/notion-sql-aarch64-apple-darwin.tar.xz"
+      sha256 "a8895963fc43f052ebebec520a8b641fd52efeea947378ab95b3c2caf9d7af2e"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/KofTwentyTwo/notion-sql/releases/download/v0.1.0/notion-sql-x86_64-apple-darwin.tar.xz"
-      sha256 "4acd287577beadebc34e78517e20fbf54b5c6fc79c33fcadf35185fdf7adc4f0"
+      url "https://github.com/KofTwentyTwo/notion-sql/releases/download/v1.0.0/notion-sql-x86_64-apple-darwin.tar.xz"
+      sha256 "feadde22f3112702a19d53940b5d5e2422b360e1fa2b6042a6e0b8575d536cf9"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/KofTwentyTwo/notion-sql/releases/download/v0.1.0/notion-sql-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "79795964947ce45e4d2787151130451794b1b9923ff18c2db3f89308a30e6014"
+      url "https://github.com/KofTwentyTwo/notion-sql/releases/download/v1.0.0/notion-sql-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "08d36b03627716bd9bd2e7837e1e52c866ba127ac1fb1c96a5842dfbe35a0aae"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/KofTwentyTwo/notion-sql/releases/download/v0.1.0/notion-sql-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "8ecedf8c24ea4db6637f7d689106fd2eba69b3081957e5ab542a0b446a3e583b"
+      url "https://github.com/KofTwentyTwo/notion-sql/releases/download/v1.0.0/notion-sql-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "ce23e0b7324874515127f61d611981c7fb6d9aab0ad2676d0faa6baebd07e603"
     end
   end
   license "MIT"
@@ -28,6 +28,7 @@ class NotionSql < Formula
     "aarch64-apple-darwin":      {},
     "aarch64-unknown-linux-gnu": {},
     "x86_64-apple-darwin":       {},
+    "x86_64-pc-windows-gnu":     {},
     "x86_64-unknown-linux-gnu":  {},
   }.freeze
 
