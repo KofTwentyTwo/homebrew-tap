@@ -5,21 +5,21 @@
 class LicenseTool < Formula
   desc "Audit and standardize license headers and metadata across codebases"
   homepage "https://github.com/KofTwentyTwo/license-tool"
-  version "0.2.0"
+  version "0.2.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/KofTwentyTwo/license-tool/releases/download/v0.2.0/license-tool_0.2.0_darwin_amd64.tar.gz"
-      sha256 "8b0c89f4122c7304c23bdf6fc74e324cc3f745e0b7f9009310bcf6b7301ee410"
+      url "https://github.com/KofTwentyTwo/license-tool/releases/download/v0.2.1/license-tool_0.2.1_darwin_amd64.tar.gz"
+      sha256 "d3954e5807414f67b8860c62d6732daaa838276cb6c12582c0b364df7657694f"
 
       define_method(:install) do
         bin.install "license-tool"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/KofTwentyTwo/license-tool/releases/download/v0.2.0/license-tool_0.2.0_darwin_arm64.tar.gz"
-      sha256 "f72a273efee29ae2182765e475a1a379243b568f833260fb3a81faa95a697686"
+      url "https://github.com/KofTwentyTwo/license-tool/releases/download/v0.2.1/license-tool_0.2.1_darwin_arm64.tar.gz"
+      sha256 "f8b2fe0abe465c6199b921f1c4efd59b67944e71d8371358953ea3cb87a1fd24"
 
       define_method(:install) do
         bin.install "license-tool"
@@ -29,15 +29,15 @@ class LicenseTool < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/KofTwentyTwo/license-tool/releases/download/v0.2.0/license-tool_0.2.0_linux_amd64.tar.gz"
-      sha256 "a72a98265a5ed3d716d26970988665b8b0acefc9b2945acbd99eddfcc45637dd"
+      url "https://github.com/KofTwentyTwo/license-tool/releases/download/v0.2.1/license-tool_0.2.1_linux_amd64.tar.gz"
+      sha256 "a722d76d20073c819a871a6d31d195ec811b0fc2cf717dd92d845255efe11734"
       define_method(:install) do
         bin.install "license-tool"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/KofTwentyTwo/license-tool/releases/download/v0.2.0/license-tool_0.2.0_linux_arm64.tar.gz"
-      sha256 "ccbecf35b876382996f87a48a502490381807e73ec35404d1c45a42e19ee0588"
+      url "https://github.com/KofTwentyTwo/license-tool/releases/download/v0.2.1/license-tool_0.2.1_linux_arm64.tar.gz"
+      sha256 "5fa36cb22ae85dd868bcce156726cc17fcd3b233e0e7b7db61df01b853e2899f"
       define_method(:install) do
         bin.install "license-tool"
       end
