@@ -1,25 +1,25 @@
 class NotionSql < Formula
   desc "Run SQL-style CRUD statements against Notion databases"
   homepage "https://github.com/KofTwentyTwo/notion-sql"
-  version "1.0.0"
+  version "1.0.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/KofTwentyTwo/notion-sql/releases/download/v1.0.0/notion-sql-aarch64-apple-darwin.tar.xz"
-      sha256 "a8895963fc43f052ebebec520a8b641fd52efeea947378ab95b3c2caf9d7af2e"
+      url "https://github.com/KofTwentyTwo/notion-sql/releases/download/v1.0.1/notion-sql-aarch64-apple-darwin.tar.xz"
+      sha256 "79443651b4d81ade368fdb9abe8c2df4e30dadebf325e411ceeff4524e2a05da"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/KofTwentyTwo/notion-sql/releases/download/v1.0.0/notion-sql-x86_64-apple-darwin.tar.xz"
-      sha256 "feadde22f3112702a19d53940b5d5e2422b360e1fa2b6042a6e0b8575d536cf9"
+      url "https://github.com/KofTwentyTwo/notion-sql/releases/download/v1.0.1/notion-sql-x86_64-apple-darwin.tar.xz"
+      sha256 "21a1f232a1daeaeb500754b512e7eed56561b5886b2c70cd617350d7f0e08a70"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/KofTwentyTwo/notion-sql/releases/download/v1.0.0/notion-sql-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "08d36b03627716bd9bd2e7837e1e52c866ba127ac1fb1c96a5842dfbe35a0aae"
+      url "https://github.com/KofTwentyTwo/notion-sql/releases/download/v1.0.1/notion-sql-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "ad4b481d6eda4b308b91436bb7b14cb92539d6802e29963acf09f7069dba2a9f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/KofTwentyTwo/notion-sql/releases/download/v1.0.0/notion-sql-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "ce23e0b7324874515127f61d611981c7fb6d9aab0ad2676d0faa6baebd07e603"
+      url "https://github.com/KofTwentyTwo/notion-sql/releases/download/v1.0.1/notion-sql-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "bd36914a73aa94ca57d31008f2623016c4e93bd4d78f86a170353b7e3e52a721"
     end
   end
   license "MIT"
