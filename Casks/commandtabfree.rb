@@ -13,6 +13,8 @@ cask "commandtabfree" do
     strategy :github_latest
   end
 
+  depends_on :macos
+
   app "CommandTabFree.app"
 
   # CommandTabFree is not yet signed with an Apple Developer ID or notarized, so
