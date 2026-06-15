@@ -1,6 +1,6 @@
 cask "commandtabfree" do
-  version "100.0.1"
-  sha256 "c19b2669269227e7d5379d17d525b540a9459d64d3294e3fb5dad313776ab2e2"
+  version "100.0.2"
+  sha256 "4eab64eca05bcc5fdc5e2f519bdc8c857a48e5f5044a687751fbc8bc7056baa7"
 
   url "https://github.com/KofTwentyTwo/alt-tab-free/releases/download/v#{version}/CommandTabFree-#{version}.zip",
       verified: "github.com/KofTwentyTwo/alt-tab-free/"
