@@ -1,6 +1,6 @@
 cask "commandtabfree" do
-  version "100.0.3"
-  sha256 "89f7b87d9d2c51402d9fbc7ae20fe45a45947d15ef72053baf17899890d11c10"
+  version "100.2.0"
+  sha256 "167ac3adb6a9421a3adad79dddcfc5d39970f5472201011d67a3a6bab51f48c7"
 
   url "https://github.com/KofTwentyTwo/CommandTabFree/releases/download/v#{version}/CommandTabFree-#{version}.zip",
       verified: "github.com/KofTwentyTwo/CommandTabFree/"
@@ -16,14 +16,6 @@ cask "commandtabfree" do
   depends_on :macos
 
   app "CommandTabFree.app"
-
-  # CommandTabFree is not yet signed with an Apple Developer ID or notarized, so
-  # macOS attaches a download-quarantine flag that Gatekeeper would otherwise block
-  # on first launch. Strip it here. Remove this stanza once the app is notarized.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/CommandTabFree.app"]
-  end
 
   uninstall quit: "com.koftwentytwo.commandtabfree"
 
