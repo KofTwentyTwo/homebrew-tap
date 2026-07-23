@@ -1,20 +1,21 @@
 # KofTwentyTwo Homebrew Tap
 
-Homebrew formulas for KofTwentyTwo tools.
+Homebrew formulas and casks for KofTwentyTwo open-source tools.
 
-`limen` releases update `Formula/limen.rb` automatically from the
-`KofTwentyTwo/limen` release workflow.
+## Nuncio — Sovereign Mail, Calendar & Contacts Suite
+
+```sh
+brew install koftwentytwo/tap/nuncio
+```
+
+Includes binaries:
+- `nuncio-cli`: POSIX scriptable command-line interface
+- `nuncio-tui`: Terminal UI (Ratatui + Vim motions)
+- `nuncio-mcp`: Native Model Context Protocol (MCP) AI server
+- `nunciod`: Centralized background daemon
 
 ## CommandTabFree (cask)
-
-A free, de-paywalled fork of [AltTab](https://github.com/lwouis/alt-tab-macos),
-the macOS window switcher:
 
 ```sh
 brew install --cask koftwentytwo/tap/commandtabfree
 ```
-
-Unsigned / not yet notarized; the cask removes the download quarantine so it
-launches without a Gatekeeper prompt. On first launch, grant Accessibility and
-Screen Recording in System Settings. Source (GPL-3.0):
-<https://github.com/KofTwentyTwo/alt-tab-free>.

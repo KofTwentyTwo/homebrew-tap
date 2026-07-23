@@ -1,35 +1,22 @@
 class Nuncio < Formula
-  desc "Sovereign Mail & Calendar Suite for Power Users, Teams, and Autonomous Agents"
+  desc "Sovereign Mail, Calendar & Contacts Suite with 100% Multi-Shell Parity"
   homepage "https://nuncio.mx"
-  version "1.0.0"
-  license "MIT OR Apache-2.0"
+  url "https://github.com/KofTwentyTwo/nuncio/archive/refs/tags/v0.1.0.tar.gz"
+  sha256 "0000000000000000000000000000000000000000000000000000000000000000"
+  license any_of: ["MIT", "Apache-2.0"]
+  head "https://github.com/KofTwentyTwo/nuncio.git", branch: "main"
 
-  if OS.mac?
-    if Hardware::CPU.arm?
-      url "https://github.com/KofTwentyTwo/nuncio/releases/download/v1.0.0/nuncio-aarch64-apple-darwin.tar.gz"
-      sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    end
-    if Hardware::CPU.intel?
-      url "https://github.com/KofTwentyTwo/nuncio/releases/download/v1.0.0/nuncio-x86_64-apple-darwin.tar.gz"
-      sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    end
-  end
-  if OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/KofTwentyTwo/nuncio/releases/download/v1.0.0/nuncio-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    end
-  end
+  depends_on "rust" => :build
 
   def install
-    bin.install "nuncio-cli" => "nuncio"
-    bin.install "nuncio-cli"
-    bin.install "nuncio-tui"
-    bin.install "nuncio-mcp"
-    bin.install "nunciod"
+    system "cargo", "install", *std_cargo_args(path: "crates/nuncio-cli")
+    system "cargo", "install", *std_cargo_args(path: "crates/nuncio-tui")
+    system "cargo", "install", *std_cargo_args(path: "crates/nuncio-mcp")
+    system "cargo", "install", *std_cargo_args(path: "crates/nunciod")
   end
 
   test do
-    assert_match "nuncio", shell_output("#{bin}/nuncio --version")
+    assert_match "nuncio", shell_output("#{bin}/nuncio-cli --version")
+    assert_match "Nuncio", shell_output("#{bin}/nuncio-cli banner")
   end
 end
